@@ -1,5 +1,6 @@
 from django.db import models
 from _datetime import datetime
+import datetime as dt
 
 class Editor(models.Model):
     first_name = models.CharField(max_length =30)
@@ -32,3 +33,19 @@ class Article(models.Model):
     editor = models.ForeignKey(Editor)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(default=datetime.now,blank=True)
+    
+    @classmethod
+    def todays_gallery(cls):
+        today = dt.date.today()
+        gallery = cls.objects.filter(pub_date__date = today)
+        return gallery 
+    
+    @classmethod
+    def days_gallery(cls,date):
+        gallery = cls.objects.filter(pub_date__date = date)
+        return gallery   
+    
+    @classmethod
+    def search_by_title(cls,search_term):
+        gallery = cls.objects.filter(title__icontains= search_term)
+        return gallery
