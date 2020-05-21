@@ -36,11 +36,12 @@ class ArticleTestClass(TestCase):
         # Creating a new editor and saving it
         self.dennis= Editor(first_name = 'Dennis', last_name ='Mwaniki', email ='dennismwaniki67@gmail.com')
         self.dennis.save_editor()
+        
         # Creating a new tag and saving it
         self.new_tag = tags(name = 'testing')
         self.new_tag.save()
 
-        self.new_article= Article(title = 'Test Article',post = 'This is a random test Post',editor = self.james)
+        self.new_article= Article(title = 'Test Article',post = 'This is a random test Post',editor = self.dennis)
         self.new_article.save()
 
         self.new_article.tags.add(self.new_tag)
