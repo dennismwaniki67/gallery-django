@@ -1,0 +1,25 @@
+h1
+{
+  color:BLACK;
+}
+.myimage{
+  height: 400px;
+}
+.dennis{
+  background-image: url("https://bit.ly/2OmxXuI");
+  background-size: cover;
+  height: 50vh;
+  
+}
+.mwaniki{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+
+}
+.mwaniki h1{
+  color: white;
+  
+}
