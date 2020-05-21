@@ -33,6 +33,7 @@ class Article(models.Model):
     editor = models.ForeignKey(Editor)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(default=datetime.now,blank=True)
+    article_image = models.ImageField(upload_to = 'articles/')
     
     @classmethod
     def todays_gallery(cls):
@@ -45,7 +46,7 @@ class Article(models.Model):
         gallery = cls.objects.filter(pub_date__date = date)
         return gallery   
     
-    # @classmethod
-    # def search_by_title(cls,search_term):
-    #     gallery = cls.objects.filter(title__icontains= search_term)
-    #     return gallery
+    @classmethod
+    def search_by_title(cls,search_term):
+        gallery = cls.objects.filter(title__icontains= search_term)
+        return gallery
