@@ -16,3 +16,15 @@ class EditorTestClass(TestCase):
         self.dennis.save_editor()
         editors = Editor.objects.all()
         self.assertTrue(len(editors) > 0)
+
+    def test_delete_method(self):
+        self.dennis.save_editor()
+        self.dennis.delete_editor()
+        editors = Editor.objects.all()
+        self.assertTrue(len(editors) == 0)
+
+    def test_display_editors(self):
+        editors = Editor.objects.all()
+
+    def test_update_single_object(self):
+        Editor.objects.filter(id=1).update(first_name ='Dennis')
