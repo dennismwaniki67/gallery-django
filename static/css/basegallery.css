@@ -1,12 +1,12 @@
 h1
 {
-  color:black;
+  color:red;
 }
 .myimage{
   height: 400px;
 }
 .dennis{
-  background-image: url("https://bit.ly/3g9WDCS");
+  background-image: url("https://bit.ly/2Tvz4L4");
   background-size: cover;
   height: 50vh;
   
@@ -19,7 +19,11 @@ h1
   color: #ffffff;
 
 }
-.mwaniki h1{
-  color: white;
+.mwaniki h2{
+  color:green;
+  
+}
+.mwaniki h3{
+  color:red;
   
 }
