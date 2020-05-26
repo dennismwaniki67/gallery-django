@@ -27,7 +27,7 @@ class tags(models.Model):
         return self.name
 
 class Article(models.Model):
-    title = models.CharField(max_length =60)
+    title = models.CharField(max_length =90)
     post = models.TextField()
     editor = models.ForeignKey(Editor)
     editor = models.ForeignKey(Editor)
